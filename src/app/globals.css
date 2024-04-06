@@ -76,9 +76,32 @@
 
 @layer components {
 	.container-custom {
-		@apply mx-auto px-6;
+		@apply mx-auto px-6 md:px-12;
+	}
+
+	.btn {
+		@apply w-max text-sm md:text-base capitalize;
+	}
+
+	.section-title {
+		@apply text-2xl font-bold;
 	}
 }
 
 @layer utilities {
+	.category-item {
+		@apply flex justify-center items-center gap-2 rounded-md text-sm h-[80px] w-full md:w-[30%];
+	}
+
+	.category-image {
+		@apply rounded-full;
+	}
+
+	.post-title {
+		@apply text-xl md:text-2xl capitalize font-semibold mt-5;
+	}
+
+	.post-excerpt {
+		@apply font-mono text-sm md:text-base;
+	}
 }
