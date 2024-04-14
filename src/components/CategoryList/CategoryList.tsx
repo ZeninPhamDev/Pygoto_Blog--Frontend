@@ -3,10 +3,10 @@ import Link from 'next/link'
 
 export default function CategoryList() {
 	return (
-		<section className='mt-16 mb-8'>
-			<h2 className='section-title '>Danh Mục</h2>
+		<section id='category-list' className='section-wrapper'>
+			<h2 className='section-title'>Danh Mục</h2>
 			<div className='flex flex-wrap gap-5 justify-between mt-8'>
-				<Link href='/blog?cat=python' className='category-item  bg-red-200'>
+				<Link href='/blog?cat=python' className='category-item bg-red-400'>
 					<Image
 						src='/python.png'
 						alt='python'
@@ -18,7 +18,7 @@ export default function CategoryList() {
 				</Link>
 				<Link
 					href='/blog?cat=web-development'
-					className='category-item bg-lime-200'
+					className='category-item bg-green-500'
 				>
 					<Image
 						src='/web-development.jpg'
@@ -31,7 +31,7 @@ export default function CategoryList() {
 				</Link>
 				<Link
 					href='/blog?cat=machine-learning'
-					className='category-item bg-sky-200'
+					className='category-item bg-blue-500'
 				>
 					<Image
 						src='/machine-learning.png'

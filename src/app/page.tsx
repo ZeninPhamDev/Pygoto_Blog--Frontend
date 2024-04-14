@@ -2,7 +2,6 @@ import CardList from '@/components/CardList/CardList'
 import CategoryList from '@/components/CategoryList/CategoryList'
 import Featured from '@/components/Featured/Featured'
 import Menu from '@/components/Menu/Menu'
-import Image from 'next/image'
 
 export default function Home() {
 	return (
@@ -10,7 +9,7 @@ export default function Home() {
 			<div className='container container-custom'>
 				<Featured />
 				<CategoryList />
-				<div className='content'>
+				<div className='page-content'>
 					<CardList />
 					<Menu />
 				</div>

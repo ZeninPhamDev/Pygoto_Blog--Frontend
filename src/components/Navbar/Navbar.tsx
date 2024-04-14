@@ -13,26 +13,18 @@ import { ModeToggle } from '@/components/ModeToggle/ModeToggle'
 import AuthLinks from '@/components/AuthLinks/AuthLinks'
 import { useState } from 'react'
 import HamburgerMenu from '@/components/Navbar/HamburgerMenu'
+import Social from '@/components/Social/Social'
+import NavLinks from '@/components/Navbar/NavLinks'
 
 export default function Navbar() {
-	const [isOpenMenu, setIsOpenMenu] = useState(false)
-
 	return (
-		<nav>
+		<nav className=''>
 			<div className='container container-custom'>
 				<div className='flex justify-between items-center h-20'>
-					{/* social */}
-					<div className='hidden lg:flex flex-1 space-x-2 '>
-						<Image src='/youtube.png' alt='youtube' width={24} height={24} />
-						<Image src='/facebook.png' alt='facebook' width={24} height={24} />
-						<Image
-							src='/instagram.png'
-							alt='instagram'
-							width={24}
-							height={24}
-						/>
+					<div className='hidden xl:flex'>
+						<Social />
 					</div>
-					<div className='flex-1 lg:text-center text-xl md:text-2xl lg:text-3xl font-bold'>
+					<div className='flex-1 lg:text-center text-xl lg:text-2xl xl:text-3xl font-bold'>
 						<Link href='/'>Pygoto Blog</Link>
 					</div>
 
@@ -41,26 +33,8 @@ export default function Navbar() {
 							<ModeToggle />
 						</div>
 						{/* Nav links */}
-						<div className='whitespace-nowrap hidden md:flex justify-end items-center space-x-5 lg:space-x-8 md:text-base lg:text-lg font-semibold'>
-							<Link href='/'>Trang Chủ</Link>
-							<Link href='/blog'>Blog</Link>
-							<DropdownMenu>
-								<DropdownMenuTrigger className='flex items-center space-x-1'>
-									<span>Danh Mục</span>
-									<IoMdArrowDropdown />
-								</DropdownMenuTrigger>
-								<DropdownMenuContent>
-									<DropdownMenuItem>
-										<Link href='/python'>Python</Link>
-									</DropdownMenuItem>
-									<DropdownMenuItem>
-										<Link href='/web-developement'>Web Developement</Link>
-									</DropdownMenuItem>
-									<DropdownMenuItem>
-										<Link href='/machine-learning'>Machine Learning</Link>
-									</DropdownMenuItem>
-								</DropdownMenuContent>
-							</DropdownMenu>
+						<div className='whitespace-nowrap hidden md:flex justify-end items-center space-x-2 lg:space-x-8 md:text-base lg:text-lg font-semibold'>
+							<NavLinks />
 							<AuthLinks />
 						</div>
 						{/* Hamburger Menu */}

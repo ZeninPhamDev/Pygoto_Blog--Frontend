@@ -13,7 +13,7 @@
 		--popover: 0 0% 100%;
 		--popover-foreground: 222.2 84% 4.9%;
 
-		--primary: 222.2 47.4% 11.2%;
+		--primary: #fb923c;
 		--primary-foreground: 210 40% 98%;
 
 		--secondary: 210 40% 96.1%;
@@ -45,7 +45,7 @@
 		--popover: 222.2 84% 4.9%;
 		--popover-foreground: 210 40% 98%;
 
-		--primary: 210 40% 98%;
+		--primary: #fb923c;
 		--primary-foreground: 222.2 47.4% 11.2%;
 
 		--secondary: 217.2 32.6% 17.5%;
@@ -66,12 +66,22 @@
 	}
 
 	* {
-		@apply border-border;
+		@apply box-border;
 	}
 
 	body {
 		@apply bg-background text-foreground;
 	}
+}
+
+.ql-container {
+	font-size: 16px !important;
+}
+
+.quill > .ql-container > .ql-editor.ql-blank::before {
+	color: #b3b3b1;
+	font-size: 16px;
+	font-weight: 300;
 }
 
 @layer components {
@@ -82,26 +92,203 @@
 	.btn {
 		@apply w-max text-sm md:text-base capitalize;
 	}
+	.nav-link {
+		@apply hover:text-primary;
+	}
+	.section-wrapper {
+		@apply py-8;
+	}
 
 	.section-title {
-		@apply text-2xl font-bold;
+		@apply text-2xl font-bold capitalize pt-8 mb-8;
+	}
+
+	.section-subtitle {
+		@apply font-normal pt-8;
+	}
+
+	.page-content {
+		@apply flex gap-12;
+	}
+
+	.page-title {
+		@apply text-center text-xl text-white bg-primary font-bold py-3;
+	}
+
+	.post,
+	.post-header {
+		@apply lg:flex items-center gap-12 my-12;
+	}
+
+	.post-media {
+		@apply lg:flex-1 h-[300px] md:h-[350px] relative my-5;
+	}
+
+	.post-image {
+		@apply object-cover;
+	}
+
+	.post-content {
+		@apply flex-1 flex flex-col items-start gap-5;
+	}
+
+	.post-info {
+		@apply flex-1;
+	}
+
+	.post-tag {
+		@apply text-red-400 font-medium;
+	}
+
+	.post-title {
+		@apply text-xl md:text-2xl capitalize font-semibold;
+	}
+	.full.post-title {
+		@apply mb-10 text-2xl md:text-3xl lg:text-4xl;
+	}
+
+	.post-excerpt {
+		@apply font-light text-sm md:text-base;
+	}
+
+	.post-desc {
+		@apply py-8;
+	}
+
+	.post-link {
+		@apply text-sm text-primary capitalize;
+	}
+
+	.post-comments {
+		@apply flex justify-start;
+	}
+
+	.date {
+		@apply font-extralight;
+	}
+
+	.user {
+		@apply flex items-center gap-5;
+	}
+	.user-info {
+		@apply flex flex-col;
+	}
+
+	.user-avatar {
+		@apply w-[50px] h-[50px] relative;
+	}
+
+	.user-image {
+		@apply object-cover rounded-full border-2 border-solid border-orange-400;
+	}
+
+	.user-name {
+		@apply text-lg;
+	}
+
+	.editor {
+		@apply flex h-[700px] relative;
+	}
+
+	.input-title {
+		@apply p-8 text-4xl bg-transparent outline-none;
+	}
+
+	.text-area {
+		@apply w-full pt-12;
+	}
+
+	.plus-btn,
+	.add-btn {
+		@apply flex-none flex justify-center items-center w-9 h-9 rounded-full bg-transparent border-[1px] border-solid border-foreground;
+	}
+
+	.add-btn {
+		@apply border-green-400;
+	}
+
+	.add {
+		@apply flex gap-5 absolute z-50 left-[80px];
 	}
 }
 
 @layer utilities {
+	/* Featured */
+	.featured.post {
+		@apply mt-12;
+	}
+
+	.featured.post-title {
+		@apply text-xl md:text-2xl;
+	}
+
+	.featured.post-media {
+		@apply flex-1 h-[300px] md:h-[500px] relative;
+	}
+	/* Category List */
 	.category-item {
-		@apply flex justify-center items-center gap-2 rounded-md text-sm h-[80px] w-full md:w-[30%];
+		@apply flex justify-center items-center gap-2 rounded-md text-white text-sm font-medium h-[80px] w-full md:w-[30%];
 	}
 
 	.category-image {
 		@apply rounded-full;
 	}
 
-	.post-title {
-		@apply text-xl md:text-2xl capitalize font-semibold mt-5;
+	/* Menu */
+	.menu.section-title {
+		@apply pt-2;
 	}
 
-	.post-excerpt {
-		@apply font-mono text-sm md:text-base;
+	.menu-item {
+		@apply flex items-center gap-3;
+	}
+
+	.menu-item-media {
+		@apply flex-none w-12 h-12 relative rounded-full;
+	}
+
+	.menu-item-image {
+		@apply object-cover rounded-full border-2 border-solid border-orange-400;
+	}
+
+	.menu-item-content {
+		@apply flex-1 flex flex-col gap-2;
+	}
+
+	.menu-item-title {
+		@apply font-medium mt-1;
+	}
+
+	.menu-item-category {
+		@apply text-sm text-white px-2 py-1 bg-red-400 rounded-xl;
+	}
+
+	.menu-item-info {
+		@apply text-sm;
+	}
+
+	.tag {
+		@apply text-sm dark:text-black px-2 py-1 border-[1px] border-solid border-gray-400 bg-gray-300 rounded-md;
+	}
+
+	.pagination {
+		@apply bg-red-500 text-white;
+	}
+
+	.footer-links-list {
+		@apply flex flex-col gap-5;
+	}
+
+	.links-list-title {
+		@apply font-semibold;
+	}
+
+	.footer-desc,
+	.footer-link {
+		@apply font-light;
+	}
+
+	.btn.publish {
+		@apply bg-green-500 hover:bg-green-400 text-white font-medium;
 	}
 }

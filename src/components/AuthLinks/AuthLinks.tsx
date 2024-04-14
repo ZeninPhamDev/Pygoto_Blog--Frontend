@@ -3,18 +3,22 @@ import React from 'react'
 
 export default function AuthLinks() {
 	// temporary
-	const status = 'not-authenticated'
+	const status: string = 'authenticated'
 
 	return (
-		<>
+		<div>
 			{status === 'not-authenticated' ? (
-				<Link href='/login'>Đăng Nhập</Link>
+				<Link href='/login' className='nav-link'>
+					Đăng Nhập
+				</Link>
 			) : (
-				<>
-					<Link href='write'>Viết Bài</Link>
-					<span className='cursor-pointer'>Đăng Xuất</span>
-				</>
+				<div className='flex gap-5 lg:gap-12'>
+					<Link href='write' className='nav-link'>
+						Viết Bài
+					</Link>
+					<span className='nav-link'>Đăng Xuất</span>
+				</div>
 			)}
-		</>
+		</div>
 	)
 }
