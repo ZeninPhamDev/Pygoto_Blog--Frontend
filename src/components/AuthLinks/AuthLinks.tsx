@@ -16,7 +16,9 @@ export default function AuthLinks() {
 					<Link href='write' className='nav-link'>
 						Viết Bài
 					</Link>
-					<span className='nav-link'>Đăng Xuất</span>
+					<Link href='#!' className='nav-link'>
+						Đăng Xuất
+					</Link>
 				</div>
 			)}
 		</div>
